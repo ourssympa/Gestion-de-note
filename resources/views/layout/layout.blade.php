@@ -70,15 +70,15 @@
                     <li class="navbar-item header-search-bar">
                         <div class="input-group stylish-input-group">
                             <span class="input-group-addon">
-                                <button type="submit">
+                                {{-- <button type="submit">
                                     <span class="flaticon-search" aria-hidden="true"></span>
                                 </button>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Find Something . . .">
-                        </div>
+                            </span> --}}
+                            {{-- <input type="text" class="form-control" placeholder="Find Something . . .">
+                        </div> --}}
                     </li>
                 </ul>
-                <ul class="navbar-nav">
+                {{-- <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
                         <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
@@ -234,7 +234,7 @@
                             <a class="dropdown-item" href="#">Chiness</a>
                         </div>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
         <!-- Header Menu Area End Here -->
@@ -244,16 +244,16 @@
             <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
-                        <a href="index.html"><img src="img/logo1.png" alt="logo"></a>
+                        <a href="{{route('home')}}"><img src="img/logo1.png" alt="logo"></a>
                     </div>
                </div>
                 <div class="sidebar-menu-content">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Accueil</span></a>
+                            <a href="{{route('home')}}" class="nav-link"><i class="flaticon-dashboard"></i><span>Accueil</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
-                                    <a href="index.html" class="nav-link"><i class="fas fa-angle-right"></i>Recap des Etats</a>
+                                    <a href="{{route('home')}}" class="nav-link"><i class="fas fa-angle-right"></i>Recap des Etats</a>
                                 </li>
 
                             </ul>

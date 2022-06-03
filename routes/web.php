@@ -4,6 +4,7 @@ use App\Http\Controllers\EtudiantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InstitutController;
 use App\Http\Controllers\EnseignantController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UeController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ReleveController;
@@ -19,9 +20,7 @@ use App\Http\Controllers\ReleveController;
 |
 */
 
-Route::get('/', function () {
-    return view('institut.index');
-});
+Route::get('/', [HomeController::class,'index'])->name('home')->middleware(['auth']);
 
 Route::resource('/institut',InstitutController::class);
 Route::resource('/etudiant',EtudiantController::class);
@@ -42,4 +41,12 @@ Route::post('note/{id}',[NoteController::class,'store'])->name('note.store');
 Route::get('note/edit/{id}',[NoteController::class,'edit'])->name('note.edit');
 Route::put('note/edit/{id}',[NoteController::class,'update'])->name('note.update');
 Route::resource('/releve',ReleveController::class);
+Route::get('/connection',[HomeController::class,'login'])->name('loger');
+Route::post('/connection',[HomeController::class,'create'])->name('logincreate');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+//Route::get('/login',[Auth\AuthenticatedSessionController::class,'create'])->name('login');

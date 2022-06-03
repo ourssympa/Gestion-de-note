@@ -74,8 +74,8 @@
                           <td> {{$data->niveau}}</td>
                           <td>
                             <a href="{{route('etudiant.edit',$data->id)}}"  class="btn-fill-md text-light bg-dodger-blue">Modifier</a>
-                            <a href="{{route('etudiant.destroy',$data->id)}}"  class="btn-fill-lmd radius-4 text-light bg-red">Supprimer</a>
-                        </td>
+                            {{-- <a href="{{route('etudiant.destroy',$data->id)}}"  class="btn-fill-lmd radius-4 text-light bg-red">Supprimer</a>
+                        </td> --}}
 
                         </tr>
                         @endforeach
